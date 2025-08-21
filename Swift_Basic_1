@@ -1,0 +1,144 @@
+import UIKit
+import SwiftUI
+/*
+struct Person{
+    let firstName: String
+    let lastName: String
+    
+    func sayHello(){
+        print( "Hello, my name is \(firstName) \(lastName).")
+    }
+}
+let aPerson = Person(firstName: "Andre", lastName: "Lorico")
+let anotherPerson = Person(firstName: "Aileen", lastName: "Zeigen")
+
+aPerson.sayHello()
+anotherPerson.sayHello()
+
+var greeting = "Hello, world!"
+
+let playerName = "Julian"
+var playerScore = 100
+var isGameOver = false
+
+
+var largeUgly = 1000000000
+var largep = 1_000_000_000
+print(largep)
+print(largeUgly)
+
+
+var number1 = 1...5
+print(number1)
+for x in number1{
+    print(x)
+}
+*/
+
+/*
+let temperature = 100
+if temperature >= 100{
+    print("The Water is Boiling")
+}else{
+    print("The Water is Not boiling")
+}
+
+
+let number = 1000
+let isSmallNumber  = number < 10
+print(isSmallNumber)
+
+let speedLimit = 65
+let currentSPeed  = 72
+let isSpeeding  = currentSPeed > speedLimit
+print(isSpeeding)
+
+
+var isSnowing  = false
+if !isSnowing {
+    print("It is not Snowing ")
+}
+*/
+ 
+/* Switch */
+let numberOfWheels = 2
+switch numberOfWheels {
+case 0 :
+    print("Missing Something")
+case 1:
+    print("Unicycle")
+case 2:
+    print("Bicycle")
+case 3:
+    print("Tricycle")
+case 4:
+    print("Quadcycle")
+default:
+    print("Thats a lot of wheels !")
+}
+/* Switch Code for Vowels */
+/*
+let character:Character = "z"
+switch character {
+case "a", "e", "i", "o", "u":
+    print("The character is a vowel")
+default:
+    print("The character is not a vowel ")
+}
+*/
+
+/* Using Range in Switch */
+let character:Character = "A"
+switch character {
+case "a"..."z":
+    print("The character is lowercase")
+default:
+    print("The character is uppercase ")
+}
+
+let distance  = 9
+switch distance{
+case 0...9:
+    print("Your destination is close")
+case 10...99:
+    print("Your desitnaiton is medium distance far ")
+case 100...999:
+    print("Your destination is far from here ")
+default:
+    print("Are you sure you want to travel this far ?")
+}
+
+/*
+let temperature = 70
+if temperature >= 65 && temperature <= 75{
+   print("The Temperature is just right ")
+}else if temperature < 65{
+   print("It is too cold")
+}
+else{
+   print("It is too hot")
+}
+*/
+
+/* Switch solution for the above code */
+
+let temperature = 70
+switch temperature {
+case Int.min...64:
+    print("It is Too Cold")
+case 65...75:
+    print("The Temperature is just right")
+default:
+    print("It is too hot")
+}
+
+/*/ Ternary Operator */
+var largest:Int
+let a = 5
+let b = 20
+largest = a > b ? a : b
+print(largest)
+
+
+
+

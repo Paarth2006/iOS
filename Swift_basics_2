@@ -1,0 +1,183 @@
+/* Functions  - 21/08/25 */
+// function is defined by using func keyword
+
+func triple(value: Int)
+{
+    let result = value * 3
+    print("If you Multiply \(value) by 3 , you will get \(result) ")
+}
+triple(value:10)
+
+
+func multiply(firstNumber : Int , secondNumber : Int){
+    let result  = firstNumber * secondNumber
+    print("The result is \(result)")
+}
+multiply(firstNumber  : 10, secondNumber: 5)
+
+//return statement
+
+func multiplyy(firstNumber : Int , secondNumber : Int)->Int{
+    let result  = firstNumber * secondNumber  // firstNumber * secondNumber will also work if the function body is of one line .
+    return result                            // return firstNumber * secondNumber will also work
+}
+let answer = multiplyy(firstNumber: 10, secondNumber: 3)
+print("The Result using return statement is \(answer)")
+
+/* Argument Labels */
+
+func sayHello( to person : String , and anotherPerson : String ) //Here 'to' is the label to person & 'and' is the label to anotherPerson
+{
+    print("Hello \(person) and \(anotherPerson)")
+}
+sayHello(to: "Trev", and: "Tania ")
+ 
+func add(_ firstNumber: Int, to secondNumber: Int)->Int     //when we use '_' as a label before the parameter we dont need to call the function using labelname i.e. '_'
+{
+    firstNumber + secondNumber
+}
+let total = add(14, to : 6)
+print(total)
+
+/* Default Parameters value */
+
+func display (teamName: String , score : Int = 0)  //Here the default parameter value of score is 0 , Even if we dont pass any value the default value that will be used is 0.
+{
+    print("\(teamName), \(score)")
+}
+
+display(teamName: "Dortmund", score : 89)
+display(teamName: "Dortmund")
+display(teamName:"",score: 89)
+
+
+func addNumber(number1: Int  = 25 , number2 : Int = 30)
+{
+    let sum = number1 + number2
+    print("Sum of \(number1)+\(number2) = \(sum)")
+}
+addNumber()
+addNumber(number1: 10)
+addNumber(number2: 20)
+addNumber(number1: 10, number2: 20)
+
+/* Multiple Parameter values */
+
+func sumNumbers(sumOfAllNumbers numbers : Int...){
+    var sum = 0
+    for number in numbers
+    {
+        sum += number
+    }
+    print("Sum of all Numbers \(sum)")
+}
+//sumNumbers(numbers: 1,2,3,4,5)              // All the three cases below will run when there is no label.
+//sumNumbers(numbers: 3,6,3,8,9,10)
+//sumNumbers(numbers: 10 ,20)
+//sumNumbers(6,5,4,3,2)                       // Will run when the label is '_'.
+sumNumbers(sumOfAllNumbers:1,3,4,5,3,5)       // Will run when the label is 'sumOfAllNumbers'.
+
+
+/* Constant Parameter */
+
+//Error : cannot assign to value: 'number' is a 'let' constant
+/*
+func doubleNumber(number: Int ){
+    number  = number * 2
+    print("double numbers \(number)")
+}
+doubleNumber(number:20)
+*/
+
+func doubleValue (number:inout Int){          //the parameter passed is a constant but if we want to modify it we cant so to overcome this we use 'inout' we pass the value by reference.
+    number = number * 2
+    print("double value \(number)")
+}
+var myNumber = 20
+doubleValue(number:&myNumber)
+
+
+//Error : cannot assign to value: 'name' is a 'let' constant
+/*
+func nameChange(name : String)
+{
+    if  name == ""
+    {
+        name = "Paarth Singh"
+    }
+    print(name)
+}
+*/
+
+/* Corrected Code using inout  */
+
+func nameChange(name : inout String)
+{
+    if  name == ""
+    {
+        name = "Paarth Singh"
+    }
+    print(name)
+}
+var myName  = "Paarth Singh"
+nameChange(name: &myName)
+
+
+//create a funciton to swap two numbers using inout
+
+func swap (number1: inout Int , number2: inout Int)
+{
+    number1 = number1 + number2
+    number2 = number1 - number2
+    number1 = number1 - number2
+    print("The First Number is \(number1) and the Second Number is \(number2)")
+}
+var firstNumber  = 10
+var secondNumber  = 20
+swap(number1: &firstNumber, number2 :&secondNumber)
+
+/* Multiple return type */
+
+func compute(number:Int) ->(Int , Int , Int )
+{
+    var sqr = number * number
+    var cube = sqr * number
+    return (number , sqr , cube)
+}
+let result:(Int, Int , Int) = compute(number:12)          // It gives a tuple
+print(result.0)                                           // This is how we print in a tuple
+print(result.1)
+print(result.2)
+
+/* Nested Function */
+
+func calculateMonthlyPayments(carPrice : Double , downPayment: Double , interestRate : Double ,  paymentTerm : Double)->Double
+{
+    func loanAmount() -> Double{
+        carPrice - downPayment
+    }
+    func totalInterest() -> Double{
+        interestRate * paymentTerm
+    }
+    func numberOfMonths()-> Double{
+        paymentTerm * 12
+    }
+    return ((loanAmount()+(loanAmount()*totalInterest()/100)/numberOfMonths()))
+}
+print("The Monthly Payement is of",calculateMonthlyPayments(carPrice: 50000, downPayment: 5000, interestRate: 3.5, paymentTerm: 7.0))
+
+/* Function as a return type */
+
+func approximatelValueOfPi1() -> Double {
+    3.14159
+}
+func approximateValueOfPi2() -> Double{
+    22.0/7.0
+}
+func pi() -> (() -> Double)     // Function without name is used because we dont know the name of the function that will be called.
+{
+    approximatelValueOfPi1       //Because it is a single statement we havent used return statement.
+    //approximateValueOfPi2
+}
+print(pi()())
+

@@ -1,0 +1,82 @@
+//
+//  ViewController.swift
+//  Calculator
+//
+//  Created by GEU on 26/08/25.
+//
+
+import UIKit
+
+class ViewController: UIViewController {
+    var firstNumber: Double = 0
+    var currentOperator : String = ""
+    var isTypingNumber: Bool = false
+    @IBOutlet weak var resultLabel: UILabel!
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+    }
+    @IBAction func numberPressed(_ sender: Any) {
+        if let numberText = (sender as? UIButton)?.titleLabel?.text {
+            if isTypingNumber {
+                if resultLabel.text == "0" {
+                    resultLabel.text = numberText
+                } else {
+                    resultLabel.text! += numberText
+                }
+            } else {
+                resultLabel.text = numberText
+                isTypingNumber = true
+            }
+        }
+    }
+    @IBAction func addButton(_ sender: Any) {
+        firstNumber = Double(resultLabel.text!) ?? 0
+        currentOperator = "+"
+        isTypingNumber = false
+    }
+    @IBAction func subtractButton(_ sender: Any) {
+        firstNumber = Double(resultLabel.text!) ?? 0
+        currentOperator = "-"
+        isTypingNumber = false
+    }
+    @IBAction func multiplyButton(_ sender: Any) {
+        firstNumber = Double(resultLabel.text!) ?? 0
+        currentOperator = "*"
+        isTypingNumber = false
+    }
+    @IBAction func divideButton(_ sender: Any) {
+        firstNumber = Double(resultLabel.text!) ?? 0
+        currentOperator = "/"
+        isTypingNumber = false
+    }
+    @IBAction func equalButton(_ sender: Any) {
+        let secondNumber: Double = Double(resultLabel.text!) ?? 0
+        var result: Double = 0
+        switch currentOperator {
+        case "+":
+            result = firstNumber + secondNumber
+        case "-":
+            result = firstNumber - secondNumber
+        case "*":
+            result = firstNumber * secondNumber
+        case "/":
+            if secondNumber == 0 {
+                resultLabel.text = "Error"
+                return
+            }
+            result = firstNumber / secondNumber
+        default:
+            break
+        }
+        resultLabel.text = "\(result)"
+        isTypingNumber = false
+    }
+    @IBAction func clearButton(_ sender: Any) {
+        firstNumber = 0
+        currentOperator = ""
+        isTypingNumber = false
+        resultLabel.text = "0"
+    }
+}
+

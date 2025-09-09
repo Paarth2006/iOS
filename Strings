@@ -1,0 +1,110 @@
+
+/* String :- 01/09/25 */
+
+let greeting = "Hello"
+var otherGreeting = "Salutaions"
+print(otherGreeting)
+ 
+*/
+// Multiline Strings have triple double quotes in the prefix and suffix of the string
+
+let joke = """
+    Q. Why did the chicken cross the road
+    A. To get to the other side !
+    """
+print(joke)
+
+let greeting  = "\rIt is traditional in programming to print \"Hello  World !\""
+print(greeting)
+
+let status =  "Your \"Status \" will disappear after 24 hours"
+print(status)
+
+/* Empty Strings */
+
+var myString = ""
+if myString.isEmpty {
+    print("\rThe string is empty ")
+}
+else{
+    print("\rThe String is not empty ")
+}
+
+var firstName = "Paarth "
+var lastName = "Singh"
+var fullName = ""
+fullName = firstName
+fullName += lastName
+print(fullName)
+
+/* Interpolation */
+
+let name = "Paarth"
+let age = 19
+print("\(name) is \(age) years old")
+
+let number1 = 4
+let number2 = 5
+print("If a is \(number1) and b is \(number2), then a + b equals \(number1 + number2)")
+
+let listName = "Shopping"
+var items  = 14
+var myLabel =  "There are \(items) items on your \(listName) list"
+func setlabel(){
+}
+
+
+
+
+/* String Equality and comparison */
+
+let month = "March"
+let otherMonth = "March"
+let lowecaseMonth = "march"
+if month  == otherMonth{
+    print("They are the same")
+}
+if month != lowecaseMonth{
+    print("They are Not the same")
+}
+/* Using Switch Now */
+
+let someCharacter : Character = "e"
+switch someCharacter{
+case "a" , "e" , "i" , "o" ,"u":
+    print("\(someCharacter) is a vowel.")
+default:
+    print("\(someCharacter) is not a vowel.")
+}
+
+/* Ignoring case */
+
+if name.lowercased() == "PaaRTH".lowercased()
+{
+    print("The Two names are equal.")
+}
+
+/* Prefix and Suffix */
+
+let greetings = "Hello world !"
+print(greetings.hasPrefix("Hello"))
+print(greetings.hasSuffix("!"))
+print(greetings.hasSuffix("world "))
+
+
+/* Finding SubStrings */
+
+if greetings.contains("world"){
+    print("Word Present")
+}else{
+    print("Word Not Present")
+}
+
+/* Checking length */
+let count  = name.count
+let newPassword = "1234"
+if newPassword.count < 8{
+    print("This password is too short.\rPassword should have atleast 8 characters.")
+}
+print(count)
+

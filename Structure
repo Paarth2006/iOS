@@ -1,0 +1,226 @@
+
+/* Structure :- 02/09/2025 */
+
+/*
+struct Student{
+    var name : String
+    var rollno : Int
+    var branch : String
+}
+var firstStudent = Student(name:"Paarth" , rollno: 33 , branch : "CSE")
+print(firstStudent.name)
+print(firstStudent.rollno)
+print(firstStudent.branch)
+
+
+struct Person {
+    var name : String
+    var age : Int
+    func sayHello(){
+        print("Hi, Good Morning \(name)")
+    }
+}
+var firstPerson = Person(name:"Paarth", age: 19)
+var secondPerson = Person(name:"Sebastian", age : 37)
+print(firstPerson.name)
+print(secondPerson.name)
+firstPerson.sayHello()
+secondPerson.sayHello()
+
+struct Car{
+    var make:String
+    var year : Int
+    var color : String
+    func startEngine(){
+        print("\(make) Engine Starting")
+    }
+    func drive(){
+        print("Driving \(make)")
+    }
+    func park(){
+        print("Parking \(make)")
+    }
+}
+let firstCar = Car(make: "BMW" , year : 2020 , color: "Blue")
+let secondCar = Car(make: "Porsche" , year : 2018 , color : "White")
+
+firstCar.startEngine()
+firstCar.park()
+secondCar.startEngine()
+secondCar.drive()
+
+/* Initializer */ //-> Provides default value
+
+let string  = String.init() // ""
+let integer = Int.init()    // 0
+let bool = Bool.init()      //false
+
+
+/*
+struct Odometer{
+    var count: Int = 0 // Default Initializer
+}
+let odometer = Odometer(count: 27000) //Memberwise initializer
+print(odometer.count)
+*/
+
+struct BankAccount{
+    var accountNumber: Int
+    var balance :Double = 0
+    var beneName = ""
+}
+var newAccount = BankAccount(accountNumber: 123)
+var transferredAccount = BankAccount(accountNumber: 456, balance: 789)
+print(newAccount.balance)
+print(transferredAccount.balance)
+/*
+struct Temperature{
+    var celsius : Double
+    
+    init(celsius: Double) {
+        self.celsius = celsius
+    }
+    
+    init(fahrenheit : Double){
+        celsius = (fahrenheit - 32) / 1.8
+    }
+    
+    init(kelvin : Double){
+        celsius = (kelvin - 273)
+    }
+}
+let currentTemperature = Temperature(celsius: 18.5)
+let boiling = Temperature(fahrenheit: 212.0)
+let cooling = Temperature(kelvin: 280)
+print(currentTemperature.celsius)
+print(boiling.celsius)
+print(cooling.celsius)
+*/
+
+/* Instance Method */
+
+/*
+struct size{
+    var width : Double
+    var height : Double
+    
+    func area()->Double{
+        return width * height
+    }
+    
+    func perimeter()->Double{
+        return 2*(height+width)
+    }
+}
+var someSize = size(width: 10, height: 5.5)
+print("Area: \(someSize.area())")
+print("Perimeter: \(someSize.perimeter())")
+*/
+
+/* Mutating Methods */
+
+struct Odometer {
+    var count : Int  = 0
+    mutating func increment() {
+        count += 1
+    }
+    mutating func increment(by amount: Int){
+        count += amount
+    }
+    mutating func reset (){
+        count = 0
+    }
+}
+
+var odometer = Odometer()
+odometer.increment()
+print(odometer.count)    // 1
+odometer.increment(by: 15)
+print(odometer.count)   // 16
+odometer.reset()
+print(odometer.count)   // 0
+*/
+
+/* Date :- 03/09/25*/
+
+
+/* Computed Property */
+
+/*
+struct Temperature{
+    var celsius : Double
+    var fahrenheit : Double{
+        celsius * 1.8 + 32
+    }
+    var kelvin : Double {
+        celsius + 273.15
+    }
+}
+let currentTemperature = Temperature(celsius: 0.0)
+print(currentTemperature.fahrenheit)
+print(currentTemperature.kelvin)
+*/
+
+
+/* Property Observers */
+
+/*
+
+struct StepCounter {
+    var totalSteps : Int = 0 {
+        willSet {
+            print("About to set totalSteps to \(newValue)")
+        }
+        didSet {
+            if totalSteps > oldValue {
+                print("Added \(totalSteps - oldValue) steps")
+            }
+        }
+    }
+}
+var steps = StepCounter()
+steps.totalSteps = 100
+steps.totalSteps = 200
+steps.totalSteps = 500
+
+
+/* Type Properties and methods */
+
+struct Temperature {
+    static let boilingPoint = 100
+    static func convertedFromFahrenheit (_ temperatureInFahrenheit : Double)->Double{
+        (((temperatureInFahrenheit - 32) * 5) / 9)
+    }
+}
+let boilingPoint = Temperature.boilingPoint
+print(boilingPoint)
+let currentTemperature = Temperature.convertedFromFahrenheit(99)
+print(currentTemperature)
+
+
+/* Copying */
+
+struct Size {
+    var width : Double
+    var height : Double
+}
+var someSize = Size(width: 250, height: 1000)
+var anotherSize = someSize
+someSize.width = 500
+var anotherAnotherSize = someSize
+print(someSize.width)
+print(anotherSize.width)
+print(anotherAnotherSize.width)
+
+
+/* Self */
+
+struct Car {
+    var color : Color
+    var description : String {
+        "This is a \(self.color) car "
+    }
+}
+let myCar = Car(color: Color.blue)
+print(myCar.description)
+*/

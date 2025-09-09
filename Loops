@@ -1,0 +1,69 @@
+
+/* Loops :- 03/09/25 */
+
+// For loops
+
+/*
+ 
+for index in 1...5 {
+    print("This is number \(index) ")
+}
+
+for _ in 1...3 {
+    print("Hello !")
+}
+
+let names = ["Aga" , "Antonio", "Rody"]
+for name in names {
+    print("Hello \(name)")
+}
+
+for letter in "ABCDEFG" {
+    print("The letter is \(letter)")
+}
+
+let a = 10
+for i in 1...10 {
+    print("\(i) times \(a) = \(i*a)")
+}
+
+
+for (index,letter) in "ABCDEFG".enumerated(){
+    print("\(index): \(letter)")
+}
+
+
+// Q. Create an array of fruits , if fruits contain mango then print then count of fruits.
+
+let fruits = ["Mango", "Mango", "Apple", "Grapes"]
+
+for i in fruits {
+    if i == "Mango" {
+        print("Total Fruits in the basket are : \(fruits.count)")
+        break
+    }
+}
+
+/* Iterating in a Dictionary */
+
+let vehicles  = ["unicycle" : 1 , "bicycle ": 2, "tricycle " : 3, "quad bike " : 4]
+
+for (vehicleName , wheelCount) in vehicles {
+    print("A \(vehicleName) has \(wheelCount) wheels ")
+}
+
+*/
+
+// While loops
+
+var numberOfLives = 3
+var stillAlive = true
+
+while stillAlive {
+    print("I still have \(numberOfLives) lives.")
+    numberOfLives -= 1
+    if numberOfLives == 0 {
+        print("Game Over")
+        stillAlive = false
+    }
+}

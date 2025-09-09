@@ -1,0 +1,115 @@
+
+/* Classes and Inheritance :- 09/09/25 */
+
+/*
+class Person {
+    var name : String = ""
+    
+    init(name: String) {
+        self.name = name
+    }
+    
+    func sayHello(name : String){
+        print(self.name)
+        print(name)
+    }
+}
+
+let person = Person(name : "Paarth")
+person.sayHello(name: "Julian")
+
+let personTwo = Person(name : "Jonas")
+personTwo.sayHello(name: "Martha")
+
+
+/* Defining a Base class */
+
+class Vehicle {
+    var currentSpeed = 0.0
+    
+    var description: String {
+        "travelling at \(currentSpeed) miles per hour "
+    }
+    func makeNoise() {
+        // do nothing - an arbitrary vehicle doesnt necessarily make a noise
+    }
+}
+
+let someVehicle = Vehicle()
+print("Vehicle: \(someVehicle.description)")
+
+/* Creating a Subclass of Vehicle (Base Class) */
+
+class Bicycle : Vehicle {
+    var hasBasket = false
+    
+}
+let bicycle = Bicycle()
+bicycle.hasBasket = true
+bicycle.currentSpeed = 15.0
+print("Bicycle: \(bicycle.description)")
+
+/* Creating Subclass of the Bicycle(Super Class) */
+
+class Tandem : Bicycle {
+    var currentNumberOfPassengers = 0
+    
+}
+let tandem = Tandem()
+tandem.hasBasket = true
+tandem.currentNumberOfPassengers = 2
+tandem.currentSpeed = 22.0
+print("Tandem: \(tandem.description)")
+
+/* Overriding a method in subclass */
+
+class Train : Vehicle {
+    override func makeNoise() {
+        print("Choo Choo!")
+    }
+}
+let train = Train()
+train.makeNoise()
+
+/* Overriding methods and properties */
+
+class Car:Vehicle {
+    var gear = 1
+    override var description: String {
+        super.description + "in gear \(gear)"
+    }
+}
+let car = Car()
+car.currentSpeed = 30.0
+car.gear = 3
+print("Car : \(car.description)")
+*/
+
+class Person {
+    var name : String
+    
+    init(name: String) {
+        self.name = name
+    }
+}
+class Student : Person {
+    var favouriteSubject : String
+    
+    init(name : String , favouriteSubject: String) {
+        self.favouriteSubject = favouriteSubject
+        super.init(name: name)
+    }
+}
+let studentOne = Student(name: "Paarth" , favouriteSubject: "Geography")
+print(studentOne.name)
+print(studentOne.favouriteSubject)
+
+class myData {
+    var number :Int = 10
+}
+
+var md1 = myData()
+var md2 = md1
+md2.number = 20
+print(md1.number)
+print(md2.number)

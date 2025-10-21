@@ -1,5 +1,0 @@
-Hello my names is paarth
-I live in ghaziabd
-I am 16 years old
-I learn Python 
-

@@ -1,0 +1,1012 @@
+#Binary Searching:-
+'''
+x=eval(input("Enter a List:"))
+y=int(input("Enter the Number to be serached:"))
+a=0
+b=len(x)
+x.sort()
+for i in range(a,b):
+    c=(a+b)//2
+    if y==x[c]:
+        print("Number found")
+        break
+    elif y<x[c]:
+        b=c-1
+    elif y>x[c]:
+        a=c+1
+else:
+    print("Number not found")
+'''
+#WAP to display all the state names form a list of states which are starting with alphabet M.
+import random
+'''
+a=["Uttrakhand","Himachal Pradesh","Maharastra","kerela"]
+for i in a:
+    if a[i]=="M":
+        print("State found")
+'''
+#WAP that ask the user to input no. of secnds and then express it in terms of minutes and seconds it contains.
+'''
+x=int(input("Enter the Seconds:"))
+if x>=60:
+    y=x//60
+    z=x%60
+    print("Minutes are:",y)
+    print("Seconds are:",z)
+'''
+#WAP to print a square multiplication table.
+'''
+for i in range(9):
+    for j in range(9):
+        print((i+1)*(j+1),end="\t")
+    print()
+'''
+#Write the definition of a function reverse(x) in python to display the elements in reverse order such that
+#each displayed element is the twice of the original element of the list(x)
+'''
+def reverse(x):
+    for i in y:
+        print(i*2,end=" ")   
+x=eval(input("Enter a list:"))
+y=x[::-1]
+reverse(x)
+'''
+#Write definition of a method ZeroEndings(Score) to display
+'''
+def ZeroEndings(Score):
+
+Score=eval(input("Enter a Number:"))
+'''
+#Write a Function Doubletheodds(Nums) to add and display twice of odd number from the list of num.
+'''
+def Doubletheodds(Nums):
+    c=0
+    for i in Nums:
+        if i%2!=0:
+            c+=i*2
+            print("Double Number:",i*2)
+    print("Sum:",c)
+Nums=eval(input("Enter a List of Numbers:"))
+Doubletheodds(Nums)
+'''
+#Write a code in python to search for a given value in a list of elements without using a builtin function.
+'''
+def elements(x):
+    for i in x:
+        if x[i]==y:
+            print("Element Present",end=" ")
+            break
+        else:
+            print("Element Not found")
+            break
+x=eval(input("Enter a List:"))
+y=int(input("Enter a Number to be searched:"))
+elements(x)
+'''
+#Write a program to find the minimum value with and without built in function.
+'''
+#With Builtin Function:
+def minimum(x):
+    for i in x:
+        y=min(x)
+        print("Minimum Value",y)
+        break
+x=eval(input("Enter a List:"))
+y=0
+minimum(x)
+'''
+#Without Builtin Function:
+'''
+def minimum(x):
+    for i in range(len(x)):
+        if x[i]<x[i+1]:
+            print("Minimum value",x[i])
+            break
+x=eval(input("Enter a List:"))
+minimum(x)
+'''
+#Write a function which takes a list as an argument the function should swap alternate elements of the list.
+'''
+def swaplist(l):
+    for i in range(0,len(l),2):
+        l[i],l[i+1]=l[i+1],l[i]
+        print(l)
+l=eval(input("Enter a List:"))
+swaplist(l)
+'''
+#Observe the following program and answer the questions that follow:
+'''
+city=["DEL","CHN","KOL","BOM","BNG"]
+for i in range(1,4):
+    fly=random.randrange(0,2)+1
+    print(city[fly],end=":")
+'''
+#Observe the following program and answer the questions that follow:
+'''
+area=["North","South","East","West"]
+for i in range(3):
+    ToGo=random.randrange(0,2)+1
+    print(area[ToGo],end=":")
+'''
+#Write a python program to change decimal number into binary number:
+'''
+d=int(input("Enter a Decimal Number:"))
+if d>=1:
+    print(d//2)
+print(d%2,end=" ")
+'''
+#write for statement to print the series 105,98,91,...,7.
+'''
+for i in range(105,6,-7):
+    print(i,end=" ")
+'''
+#WAP to find the sum of all digits given by the user.
+'''
+x=int(input("Enter a Number:"))
+s=0
+for i in str(x):
+    s+=int(i)
+print(s)    
+'''   
+#WAP that uses a function which take two string arguments and returns the string comparison result of the two passed strings
+'''
+def length(s,s1):
+    for i in range(len(s)):
+        if len(s)>len(s1):
+            print("The String:",s,"is Bigger than",s1)
+        if s[i]>s1[i]:
+            print(s[i],"is greater than",s1[i])
+        if len(s1)>len(s):
+            print("The String",s1,"is Bigger than",s)
+        if s1[i]>s[i]:
+            print(s1[i],"is greater than",s[i])
+        break
+s=input("Enter String 1:")
+s1=input("Enter String 2:")
+length(s,s1)
+'''
+#Write a output:
+'''
+y=2000
+if y%4==0:
+    print("Leap Year")
+else:
+    print("Not Leap Year")
+#Output=Leap
+'''
+#Accept a list containing integers randomly except any number and display the position at which the number is found in the list.
+'''
+l=eval(input("Enter a List of Numbers:"))
+x=int(input("Enter the number to be found:"))
+for i in l:
+    if l==x:
+'''        
+#How will you convert "895" taken as input into:(i)integer,(ii)float,and store it in a variable "num".
+'''
+num="895"
+print(int(num))
+print(float(num))
+print(num)
+'''
+#WAP that prints a list of the integers from 1-20 and their squares the output.
+'''
+for i in range(1,21):
+    print(i)
+    print("\t",i**2)
+'''
+#WAF that recieves an octal number and print the equivalent number in other number basis,i.e,decimal,binary and hexadecimal.
+'''
+def octal(a):
+    print("Binary Form:",bin(a))
+    print("Hexadecimal Form:",hex(a))
+    print("Decimal Form:",int(str(a),8))
+a=int(input("Enter an Octal Number:"))
+octal(a)
+'''
+#WAP Lshift(arr,n) in python which accepts a list(arr) of numbers and n is a numeric value by
+#which all elements of the lists are shifted to left.
+'''
+def Lshift(arr,n):
+    for i in arr:
+    
+arr=eval(input("Enter a List of Numbers:"))
+n=int(input("Enter a Number to shift the places:"))
+Lshift(arr,n)
+'''
+#WAF that receives two numbers and generates a random number from that range.
+#using this function the main program should be able to print 3 no. randomly.
+'''
+def ran(a,b):
+    for i in range(3):
+        print(random.randint(a,b))
+a=int(input("Enter Number 1:"))
+b=int(input("Enter Number 2:"))
+ran(a,b)
+'''
+#Write a function that prints prime number between the range(2,n)
+'''
+def prime(n):
+    for i in range(2,n+1):
+        flag=True
+        n1=n//2
+        for j in range(2,n1):
+            if n%i==0:
+                flag=False
+                break
+    if flag==True:
+        print(n,"Is a prime number")
+n=int(input("Enter a Number:"))
+prime(n)
+'''
+#Write a user defined function GenNum(a,b) to generate odd no.s a and b including b.
+'''
+def GenNum(a,b):
+    for i in range(a,b+1):
+        if i%2!=0:
+            print(i,"Odd Number")
+a=int(input("Enter a Number 1:"))
+b=int(input("Enter a Number 2:"))
+GenNum(a,b)
+'''
+#WAF that recieves a 4 digit number and calculates the squares of first two digits and last two digits of the number.
+'''
+def calc(a):
+    x=str(a)
+    if len(x)==4:
+        b=x[:2]
+        d=int(b)**2
+        c=x[2:]
+        e=int(c)**2
+        print(d+e)
+a=int(input("Enter a 4 numbers:"))
+calc(a)
+'''
+#WAF RevTexT() to read a string and print only those words whoch are starting with I,i in reverse order.
+'''
+def RevText(x):
+        if x.startswith("i"):
+            
+x=input("Enter a String:")
+RevText(x)
+'''
+#WAF to match key Values in Two Dictionary.
+'''
+#Write a Function that prints the longest word from the text inputted by the user.
+def longest word(x):
+    m=x[0]
+    for i in x:
+    if len(i)>len(m):
+    m=i
+    print(m
+s=input("Enter a String:")
+x=s.split()
+longestword(x)
+'''
+#Write a Function that counts a particular word inputted by the user.
+'''
+def wordcount(x,y):
+    print(x.count(y))    
+x=input("Enter 1st String:")
+y=input("Enter 2nd String:")
+wordcount(x,y)
+'''
+
+#Write a Function Amount() which counts the alphabet "a" inputed by the user.
+'''
+def Amount(x):
+    print(x.count("a")+x.count("A"))
+x=input("Enter a Sentence:")
+Amount(x)
+'''
+#Write a Function Words() to read the string from the user count
+#and display occurrences of those words which are having more than 4 Alphabets.
+'''
+def Words(x):
+    if len(x)>=4:
+        print(x,":Is The Word")
+    else:
+        print("Error")
+x=input("Enter a Words:")
+Words(x)
+'''
+#FILE HANDLING:-    
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt")
+print("Successful")
+'''
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","w")
+f.write("Pattern")
+f.close()
+'''
+'''
+with open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r") as f:
+    print("file opened")
+'''
+'''
+with open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","w") as f:
+    f.write("w")
+'''
+#MENU DRIVEN:-
+'''
+ask=int(input("Enter ask value:"))
+ask1=input("Do you want to continue or not?")
+while True:
+        if ask==1:
+            f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+            d=f.read()
+            print(d)
+            f.close()
+            if ask1=="y":
+                f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+                d=f.read()
+                print(d)
+                f.close()
+            else:
+                    if ask=="n":
+                        continue      
+        if ask==2:
+            f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","w")
+            f.write("Anything")
+            f.close()
+            if ask1=="y":
+                f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","w")
+                f.write("Anything")
+                f.close()
+            else:
+                    if ask=="n":
+                        continue
+        if ask==3:
+            f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","a")
+            f.write("Python")
+            f.close()
+            if ask1=="y":
+                f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","a")
+                f.write("Python")
+                f.close()
+            else:
+                    if ask=="n":
+                        continue
+        break
+'''
+#WAF in python to count and display the number of 3 letter words in the file.
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+d=f.read()
+d1=d.split()
+for i in d1:
+        if len(i)==3:
+                print("3 letter words in the string is:",i)
+'''
+#Alter:-
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+l=[]
+c=0
+d=f.read()
+d1=d.split()
+for i in d1:
+        if len(i)==3 and i.isalpha():
+                l.append(i)
+        elif d.count(str(3))!=3:
+                   c+=1
+print("3 letter words present are:",l)
+print("Other letter present are:",c)
+'''
+#WAF word_count() to count how many words are present in the text file.
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+l=[]
+d=f.read()
+d1=d.split()
+def word_count(d):
+        for i in d1:
+                if i.isalpha():
+                        l.append(i)
+        print(len(l))                
+word_count(d)
+'''
+#WAF countdit() which reads the content of a text file and displays the  number of digits in it.
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+l=[]
+d=f.read()
+def countdit(d):
+        for i in d:
+                if i.isdigit():
+                        l.append(i)
+        print(len(l))
+countdit(d)                
+'''
+#WAF to read the content of a text file and display all those lines which are either starting with "D" or "N.
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+l=[]
+d=f.readlines()
+def content(d):
+        for i in d:
+                if i.startswith("D"): 
+                        print("The lines starting with D are:",i)
+                if i.startswith("N"):
+                        print("The lines starting with N are:",i)
+content(d)
+'''
+#WAF countyoume() which reads the content of the text file and counts the word you and me.
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","r")
+d=f.read()
+def countyoume(d):
+        c=c1=0
+        for i in d:
+                if i.lower()=="you":
+                        c+=1
+                elif i.lower()=="me":
+                        c1+=1
+        print("Count of the Word YOU is:",c)
+        print("COunt of Word ME is:",c1)
+countyoume(d)
+'''
+#Seek and Tell:-
+'''
+f=open("C:\\Users\\lab 2 pc-34\\Desktop\\abc.txt","rb")
+d=f.tell()
+print(d)
+f.seek(5,0)
+d1=f.tell()
+print(d1)
+f.seek(-2,1)
+print(f.tell())
+'''
+import sys
+'''
+a=int(sys.stdin.readline())
+if a==10:
+        sys.stderr.write("10 Not Allowed")
+else:
+        sys.stdout.write("Allowed")
+'''
+'''
+x=int(input())
+y=int(input())
+try:
+    c=x/y
+    print(c)
+except Exception as e:
+    print("error",e)
+'''
+'''
+try:
+    f=open("abc.txt")
+except Exception as e:
+    print("error",e)
+'''
+import pickle
+'''
+f=open("hello.dat","wb")
+l=[1,2,3,4]
+pickle.dump(l,f)
+f.close()
+
+f=open("hello.dat","rb")
+d=pickle.load(f)
+print(d)
+f.close()
+
+f=open("hello.dat","ab")
+m=["a","b"]
+e=pickle.dump(m,f)
+print(e)
+f.close()
+'''
+'''
+l=[]
+f=open("python.dat","ab")
+ch=input("Enter Y or N:")
+while True:
+    Rno=int(input("Enter a Number:"))
+    Name=input("Enter the Name:")
+    l1=[Rno,Name]
+    l.append(l1)    
+    if ch=="n":
+        break
+pickle.dump(l,f)
+pickle.load(l,f)
+'''
+#Menu Driven:-
+'''
+a=int(input("Enter 1 for Write,2 for Read and 3 for Append,4 for Search or 5 for update:"))
+lst_master=[]
+while True:
+    if a==1:
+        f=open("C:\\Users\\lab 2 pc-34\\AppData\\Local\\Programs\\Python\\Python36qwert.dat","wb")
+        ch=input("Enter y or Y to continue:")
+        while ch in ("yY"):
+            rno = int(input("Enter the rollno:"))
+            name=input("Enter the name:")
+            lst=[rno,name]
+            lst_master.append(lst)
+            ch=input("Enter y or Y to continue:")
+            if ch not in ("yY"):
+                    break
+        pickle.dump(lst_master,f)
+        f.close()
+        print(lst_master)
+    a=int(input("Enter 1 for Write,2 for Read and 3 for Append,4 for Search or 5 for Update:"))
+    if a==2:
+        f=open("C:\\Users\\lab 2 pc-34\\AppData\\Local\\Programs\\Python\\Python36qwert.dat","rb")
+        d1=pickle.load(f)
+        f.close()
+        print(d1)
+    if a==3:
+        f=open("C:\\Users\\lab 2 pc-34\\AppData\\Local\\Programs\\Python\\Python36qwert.dat","rb+")
+        r1=int(input("Enter roll.no:"))
+        n1=input("Enter the Name:")
+        lst2=[r1,n1]
+        pickle.dump(lst2,f)
+        p=f.read()
+        print(p)
+        f.close()
+    if a==4:
+        f=open("C:\\Users\\lab 2 pc-34\\AppData\\Local\\Programs\\Python\\Python36qwert.dat","rb")
+        k2=eval(input(("Enter what to search:")))
+        flag
+        =0
+        d=pickle.load(f)
+        for i in d:
+            if i[0]==k2:
+                flag=1
+        if flag==0:
+            print("Record not Found")
+        else:
+            print("Record Found")
+        f.close()
+    if a==5:
+        f=open("C:\\Users\\lab 2 pc-34\\AppData\\Local\\Programs\\Python\\Python36qwert.dat","rb+")
+        d2=pickle.load(f)
+        r=int(input("Enter what to update:"))
+        for i in d:
+            if i[0]==r:
+                n=input("Enter Updated Name")
+                i[1]=n
+                flag=1
+        if flag==1:
+            f.seek(0)
+            pickle.dump(lst,f)
+        else:
+            print("Record Not Found")
+            break
+'''
+
+#Q.WAP to count the number of records stored in a binary file marks.dat
+'''
+f=open(r"marks.dat","wb")
+marks=int(input("Enter marks:"))
+name=input("Enter the Name:")
+lst_master=[]
+l=[]
+a=input("Do you want to enter more elements?:")
+while True:
+    if a in "yY":
+        marks=int(input("Enter marks:"))
+        name=input("Enter the Name:")
+        l=[marks,name]
+        lst_master.append(l)
+        pickle.dump(lst_master,f) 
+    a=input("Do you want to enter more elements?:")
+    if a in "nY":
+        break
+print(len(lst_master))
+f.close()
+'''
+#WAF in python to search and display details of those travelers who traveled kochi form 	file bus.dat().
+'''
+f=open(r"bus.dat","wb")
+travelers=int(input("Enter the Number of travelers:"))
+bus_number=int(input("Enter the Bus Number:"))
+bus_starting_point=input("Enter the Starting Point:")
+bus_destination=input("Enter the Destination:")
+lst_master=[]
+l=[]
+a=input("Do you want to enter more traveler details?")
+while True:
+    if a in "yY":
+        bus_number=int(input("Enter the Bus Number:"))
+        bus_starting_point=input("Enter the Starting Point:")
+        bus_destination=input("Enter the Destination:")
+        l=[bus_number,bus_starting_point,bus_destination]
+        lst_master.append(l)
+        pickle.dump(lst_master,f)
+        a=input("Do you want to enter more traveler details?")
+    if a in "nN":
+        print("ok")
+    if bus_destination=="Kochi":
+        def kochi():
+            c=0
+            if i[2].lower=="Kochi":
+                c+=1
+                print(c)
+        kochi()
+'''
+
+#A binary file comp.dat has a structure comp id, c name, sales. write a method in python to search and display the content where
+#comp id is matching with the value 100
+'''
+f=open(r"comp.dat","wb")
+lst_master=[]
+l=[]
+while True:
+    comp_id=int(input("Enter Comp id:"))
+    c_name=input("Enter Cname:")
+    sales=int(input("Enter the Sales amount"))
+    l=[comp_id,c_name,sales]
+    lst_master.append(l)
+    a=input("Do you want to enter more details?")
+    if a in "nN":
+        break
+
+pickle.dump(lst_master,f)
+f.close()
+
+
+def comp():
+    l1=[]
+    f=open(r"comp.dat","rb")
+    d=pickle.load(f)
+    for i in d:
+        if i[0]==100:
+            l1.append(i)
+            print(l1)
+            
+f.close()
+comp()
+'''
+#WAP in python which reads the content of a binary file telephone.dat and copies only those records from telephone.dat to telebackup.dat
+#where area code is abc. assume that the binary file is populated with object following structure.cu id , name ,area code, phone number
+
+#CSV File:-
+import csv
+#WAP to add a structure itemcode,itemdescription,quantity and price in a CSV File.WAF to search item details based on the item code
+#inputed by the user.
+'''
+f=open("item.csv","w",newline="")
+
+w=csv.writer(f)
+w.writerow(["Item Code","Item Desc","quantity","Price"])
+x=int(input("Enter number of elements:"))
+l=[]
+for i in range(x):
+    itemcode=int(input("Enter Item Code:"))
+    itemdescription=input("Enter Item Description:")
+    quantity=int(input("Enter Quantity:"))
+    price=int(input("Enter the price:"))
+    l.append([itemcode,itemdescription,quantity,price])
+w.writerows(l)    
+f.close()
+def item():
+    f=open("item.csv","r")
+    sw=csv.reader(f)
+    y=int(input("Enter Item code to be searched:"))
+    for i in sw:
+        if i[0]==str(y):
+            print(i)
+    f.close()
+item()
+'''
+#WAP that asks a new user the User ID and password,if User ID does not exist add and append it to the file.
+'''
+f=open("User.csv","w",newline="")
+w=csv.writer(f)
+w.writerow(["User ID","Password"])
+l=[]
+x=int(input("Enter Number of elements:"))
+for i in range(x):
+    UserId=int(input("Enter User ID:"))
+    password=input("Enter A password:")
+    l.append([UserId,password])
+w.writerows(l)
+f.close()
+def userid():
+    f=open("user.csv","r")
+    sw=csv.reader(f)
+    y=int(input("Enter User ID to be searched:"))
+    for i in sw:
+        if i[0]==str(y):
+print(“user ID present”)	
+            Break
+    f.close()
+userid()
+def append():
+    f=open("user.csv","w",newline="")
+    tw=csv.writer(f)
+    m=int(input("Enter Number of Elements to be appended"))
+    for i in range(m):
+        UserId=int(input("Enter User ID:"))
+        password=input("Enter A password:")
+        l.append([UserId,password])
+    w.writerows(l)
+    f.close()
+append()
+'''
+#WAP to read all content of student.csv and display record of only those students who scored above 80.[Roll.No,Name,Marks]
+'''
+f=open("student.csv","w",newline="")
+w=csv.writer(f)
+w.writerow(["Roll.No","Name","Marks"])
+l=[]
+x=int(input("Enter Number of elements:"))
+for i in range(x):
+    RollNo=int(input("Enter Roll.No:"))
+    Name=input("Enter Name:")
+    Marks=int(input("Enter Marks:"))
+    l.append([RollNo,Name,Marks])
+w.writerows(l)
+f.close()
+def mark():
+    f=open("student.csv","r")
+    w=csv.reader(f)
+    next(w)
+    for i in w:
+         if int(i[2])>=80:
+            print(i)
+    f.close()
+mark()
+'''
+
+#WAF in python to search for the details,phone.no,call of those phones which have more than 800 calls form a binary file phone.dat
+'''
+f=open(r"phone.dat","wb")
+lst_master=[]
+l=[]
+a=input("Do you want to enter more elements?:")
+while True:
+    if a in "yY":
+        Phone_No=int(input("Enter Phone Number:"))
+        call=int(input("Enter the Number of Phone Calls:"))
+        l=[Phone_No,call]
+        lst_master.append(l)
+        a=input("Do you want to enter more details?")
+    if a in "nN":
+        break
+pickle.dump(lst_master,f)
+f.close()
+def calls():
+    l1=[]
+    f=open(r"phone.dat","rb")
+    d=pickle.load(f)
+    for i in d:
+        if i[1]>=800:
+            l1.append(i)
+            print(l1)
+f.close()
+calls()
+'''
+#WAF to count the number of blanks present in a text file named para.txt
+'''
+def count():
+    f=open(r"C:\Users\lab 2 pc-34\Desktop\para.txt","r")
+    d=f.read()
+    c=1
+    a=d.split()
+    for i in a:
+        c+=1
+    print(c)
+count()
+'''
+#The structure of a data file product.dat(product code , product desc,stock).
+#WAF in python to update the file with new values of stock the value of stock and product code
+#whose stock is to be update during the execution of program.
+'''
+f=open(r"product.dat","wb")
+lst_master=[]
+l=[]
+a=input("Do you want to enter more details?")
+while True:
+    if a in "yY":
+        product_code=int(input("Enter the Product Code:"))
+        product_desc=input("Enter Product Decription:")
+        stock=int(input("Enter the Number of Stocks:"))
+        l=[product_code,product_desc,stock]
+        lst_master.append(l)
+        a=input("Do you want to enter more details?")
+    if a in "nN":
+        break
+pickle.dump(lst_master,f)
+f.close()
+def upd():
+    flag=0
+    f=open(r"product.dat","rb+")
+    d=pickle.load(f)
+    r=int(input("Enter product code to be updated:"))
+    for i in d:
+        if int(i[0])==r:
+            n=int(input("Enter Updated stock:"))
+            i[2]=n
+            flag=1
+        if flag==1:
+            f.seek(0)
+            pickle.dump(lst_master,f)
+            print("Updated Successfully")
+        else:
+            print("Record Not Found")
+            break
+f.close()
+upd()
+'''
+#WAF economic() to read each record of a binary file items.dat find and display those items which cost less than 2400.(cost,id,gift)
+'''
+f=open(r"items.dat","wb")
+lst_master=[]
+l=[]
+a=input("Do you want to enter more details?")
+while True:
+    if a in "yY":
+        cost=int(input("Enter The Cost:"))
+        ID=input("Enter The ID:")
+        gift=int(input("Enter The Gift Amount:"))
+        l=[cost,ID,gift]
+        lst_master.append(l)
+        a=input("Do you want to enter more details?")
+    if a in "nN":
+        break
+pickle.dump(lst_master,f)
+f.close()
+def economic():
+    l1=[]
+    f=open(r"items.dat","rb")
+    d=pickle.load(f)
+    for i in d:
+        if i[0]<=2400:
+            l1.append(i)
+            print(l1)
+f.close()
+economic()
+
+'''
+
+#WAP that reads a text file and creates another file that is identical except that every sequence of consecutive blank spaces is replaced by single blank spaces.
+'''
+f=open(r"C:\Users\lab 2 pc-34\Desktop\para.txt","r")
+f1=open(r"para1.txt","w")
+lst=f.readlines()
+for i in lst :
+    w=i.split()
+    for j in w:
+        f1.write(j+"")
+print("Successful")
+print(i)
+print(j)
+'''
+#DATA STRUCTURE:-
+'''
+a=int(input("Enter 1 for PUSH\nEnter 2 for POP\nEnter 3 For Traversal\nEnter 4 for Peek\nEnter 5 for Exit\nEnter Your Choice:"))
+stack=[]
+while True:
+    if a==1:
+        def PUSH():
+            x=int(input("Enter the Maximum Range:"))
+            i=int(input("Enter an Element:"))
+            while True:
+                if i>x:
+                    print("overflow")
+                else:
+                    stack.append(i)
+                    print(stack)
+                break
+        PUSH()
+    a=int(input("Enter 1 for PUSH\nEnter 2 for POP\nEnter 3 For Traversal\nEnter 4 for Peek\nEnter 5 for Exit\nEnter Your Choice:"))
+    if a==2:
+        def POP():
+            while True:
+                if stack==[]:
+                    print("Underflow")
+                else:
+                    stack.pop()
+                    print(stack)
+                break
+        POP()
+    a=int(input("Enter 1 for PUSH\nEnter 2 for POP\nEnter 3 For Traversal\nEnter 4 for Peek\nEnter 5 for Exit\nEnter Your Choice:"))
+    if a==3:
+        def TRAVERSAL():
+            while True:
+                t=stack[::-1]
+                print(t)
+                break
+        TRAVERSAL()
+    a=int(input("Enter 1 for PUSH\nEnter 2 for POP\nEnter 3 For Traversal\nEnter 4 for Peek\nEnter 5 for Exit\nEnter Your Choice:"))        
+    if a==4:
+        def PEEK():
+            while True: 
+		print(stack[-1])
+                	break
+        PEEK()
+a=int(input("Enter 1 for PUSH\nEnter 2 for POP\nEnter 3 For Traversal\nEnter 4 for Peek\nEnter 5 for Exit\nEnter Your Choice:"))
+    if a==5:
+        break
+'''
+#MENU DRIVEN CONNECTIVITY:-
+'''
+print("Enter 1 to Create Table")
+print("Enter 2 to Insert into Table")
+print("Enter 3 to Update from Table")
+print("Enter 4 to Delete form Table")
+print("ENter 5 to see the Table")
+n=int(input("Enter your Choice:"))
+import mysql.connector
+db_connection=mysql.connector.connect(host="localhost",user="root",password="Pass_111",database="employee" )
+db_cursor=db_connection.cursor()
+while True:
+    if n==1:
+        def create():
+            q=db_cursor.execute("SHOW TABLES")
+            if School in q:
+                print("Table Already exists")
+            else:
+                db_cursor.execute("CREATE TABLE School(ID INT PRIMARY KEY, Name VARCHAR(255), Salary INT(6))")
+                db_cursor.execute("SHOW TABLES")
+                for table in db_cursor:
+                        print(table)
+                        break
+        create()
+    if n==2:
+        def insert():
+            x=int(input("Enter the Number of records you want to enter:"))
+            for i in range(x):
+                a=int(input("Enter the ID:"))
+                b=input("Enter the Name:")
+                c=int(input("Enter Salary:"))
+                data=("INSERT INTO school(id, name, salary)VALUES({},'{}',{}) where id=1").format(a,b,c)
+                db_cursor.execute(data)
+                db_connection.commit()
+                print(db_cursor.rowcount,"Record Inserted")
+        insert()
+        break
+    if n==3:
+        def update():
+            updated_ID=int(input("Enter the Updated ID:"))
+            updated_Name=input("Enter the Update Name:")
+            updated_Salary=int(input("Enter the Update Salary:"))
+            data2=("UPDATE SCHOOL set id={}, Name={}, Salary={}").format(updated_ID, updated_Name,updated_Salary)
+            db_cursor.execute(data2)
+            db_connection.commit()
+            print(db_cursor.rowcount,"Record Updated")
+        update()
+        break
+    if n==4:
+        def Delete():
+            print("deleted")
+    if n==5:
+        def see():
+            db_cursor.execute("SELECT * FROM school")
+            d=db_cursor.fetchall()
+            for i in d:
+                print(i)
+        see()
+        break
+'''
+'''
+import mysql.connector as s
+mycon=s.connect(host='localhost',user='root',password='Pass_111',database='employee)
+if mycon.is_connected():
+    print("Connected")
+mycur=mycon.cursor()
+mycur.execute("Select * from student")
+data=mycur.fetchall()
+print(data)
+a= input("Enter I/i for insert or Enter U/u for update:")
+if a.lower()in "i":
+    flag=0
+    for i in data:
+        if i==4:
+            flag=1
+            break
+    if flag!=1:
+        mycur.execute("insert into student values(4, 'Sushi' , 'Gzb')")
+        mycom=mycon.commit()
+        print("Addition Successful")
+    else:
+        print("Value already exist")																																	
+elif a in "uU":
+    mycur.execute("update student set Name='Dark' where Roll_No=1")
+    mycom=mycon.commit()
+    print("Update Successful")
+'''

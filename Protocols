@@ -1,0 +1,254 @@
+import Cocoa
+import SwiftUI
+var greeting = "Hello, playground"
+
+/* Protocols are sort of an agreement :-  protocol defines a blueprint of methods, properties, that can be adopted by classes, structures, or enumerations. It essentially establishes a contract that any conforming type must fulfill.
+ */
+
+//protocol Vehicle {
+//    func move()
+//}
+//
+//class Car : Vehicle {
+//    func move() {
+//        
+//    }
+//}
+//
+//class Bus : Vehicle {
+//    func move() {
+//        
+//    }
+//}
+//
+//class Truck : Vehicle {
+//    func move() {
+//        
+//    }
+//}
+//
+//class Bike : Vehicle {
+//    func move() {
+//        
+//    }
+//}
+
+
+
+/* Properties */
+
+//protocol Identifiable {
+//    var id : String { get }
+//    var name : String { get set}
+//}
+//
+//struct Person : Identifiable {
+//    let id : String
+//    var name : String
+//    
+//}
+//
+//var person = Person(id: "1", name: "John")
+//print(person.id)
+//print(person.name)
+//
+//person.name = "Jane"
+//print(person.name)
+
+/* Mutating Method */
+
+protocol Switchable {
+    mutating func toggle()
+}
+
+struct LightSwitch : Switchable {
+    var isOn : Bool = false
+    mutating func toggle() {
+        isOn.toggle()
+    }
+}
+
+
+/* Initializer */
+
+//protocol Creatable {
+//    init(value : Int)
+//}
+//
+///* if there is an initializer in a protocol nand we are using it in a class then we have to initialize the init again with required keyword */
+//
+//class Demo : Creatable {
+//    required init(value: Int) {
+//        
+//    }
+//}
+//
+///* we dont need to use required keyword in strucutre */
+//
+//struct Demo2 : Creatable {
+//    init(value: Int) {
+//        
+//    }
+//}
+
+
+//protocol P {
+//    init(value: Int)
+//}
+//
+//class Demo : P {
+//    let n: Int
+//    let x: Int
+//    
+//    init(n:Int , x:Int) {
+//        self.n = n
+//        self.x = x
+//    }
+//    
+//    init(n: Int) {
+//        self.n = n
+//        self.x = 10
+//    }
+//    
+//    required convenience init(value: Int) {
+//        self.init(n: value, x:0)
+//    }
+//}
+
+
+//protocol P {
+//    init(value : Int)
+//}
+//
+//class A: P {
+//    required init(value : Int ) {
+//
+//    }
+//}
+///* required because protocol persists down the class chain
+// override because super class already has the initializer
+//*/
+//
+//class B : A{
+//    required override init(value : Int ) {}
+//}
+
+
+//protocol P {
+//    init(value : Int)
+//}
+//class A {
+////    required init(value: Int) {
+////
+////    }
+//    func name(){}
+//}
+///* to avoid override errors during compile time same name */
+//class B: A {
+//    required convenience init(value:Int){
+//        self.init()
+//    }
+//    override func name(){}
+//    override init (){
+//        super.init()
+//    }
+//}
+
+
+//protocol Named {
+//    var name : String {get}
+//}
+//protocol Aged {
+//    var age :  Int {get}
+//}
+//protocol PersonalInformation : Named, Aged {
+//    
+//}
+///* Structrure and classes are concrete type properties */
+//struct Person : PersonalInformation {
+//    var name: String
+//    var age: Int
+//}
+//let person1 = Person(name: "Bob", age: 23)
+//
+//
+//
+//func printPersonalInfo(_ person: Named & Aged){
+//    print("\(person.name) is \(person.age) years old ")
+//}
+//let p = Person(name: "John", age: 20)
+//printPersonalInfo(p)
+//
+
+
+//protocol Copyable {
+//    func copy() -> Self
+//}
+//
+//struct Document : Copyable {
+//    var text : String
+//    func copy() -> Self {
+//        return Document(text: self.text)
+//    }
+//}
+//
+//
+//struct Paragraph : Copyable {
+//    var text : String
+//    func copy() -> Self {
+//        return Paragraph(text: self.text)
+//    }
+//}
+
+/* CustomStringConvertible is a protocol*/
+
+class Name: CustomStringConvertible {
+    let age : Int
+    var name: String
+    
+    init(age: Int, name: String) {
+        self.age = age
+        self.name = name
+    }
+    var description: String {
+        return "\(name) is \(age) years old "
+    }
+}
+var person1 = Name(age: 23 , name: "John")
+print(person1)
+
+
+struct Employee: Equatable , Comparable , Codable{
+    let firstName: String
+    let lastName: String
+    let jobTitle: String
+    let phoneNumber: String
+    
+    /* Equatable */
+    static func == (lhs:Employee, rhs:Employee) -> Bool {
+        return lhs.firstName == rhs.firstName && lhs.lastName == rhs.lastName
+        && lhs.jobTitle == rhs.jobTitle && lhs.phoneNumber == rhs.phoneNumber
+    }
+    /* Sorting Information with Comparable */
+    static func < (lhs: Employee, rhs: Employee) -> Bool {
+        return lhs.lastName < rhs.lastName
+    }
+
+    
+}
+/* Encoding and decoding objects with Codable */
+let ben = Employee(firstName: "Jenica", lastName: "Chong", jobTitle: "Front Desk", phoneNumber: "455-555-7767")
+
+let jsonEncoder = JSONEncoder()
+if let jsonData = try? jsonEncoder.encode(ben){
+    print(jsonData)
+}
+
+
+/* DELEGATION :- Enables a class or structure to hand off responsibilites to an instace of another type */
+
+//protocol ButtonDelegate{
+//    func userTappedButton(_ button: Button)
+//}
+
+/* A super class reference variable can hold the refernce of the subclasses */

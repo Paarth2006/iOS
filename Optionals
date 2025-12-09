@@ -1,0 +1,103 @@
+import Cocoa
+
+//var localAddress : String = nil
+//print(localAddress)
+
+//var age = nil
+
+//var age : Int
+//var age = 0
+//var age : Int = 0
+//var age : Int? = nil
+//var name : String? = nil
+//print(name.count)
+
+/* to handle optionals we use if let statement always */
+
+//if let newName = name {
+//    print(newName.count)
+//} else {
+//    print("Name is empty")
+//}
+//
+//var age : Int? = nil
+///* Unwrapping Optional */
+//
+//if let newAge =  age {
+//    print("Your age is \(newAge)")
+//}
+
+//var alnum = "10"
+//let num  = Int(alnum)  //Here the type of num is :Int?
+
+//var alnum = "10"
+//let num  = Int(alnum)!  //but here the type of num is "Int that is because of Force unwrapping (!)
+//print(num)
+
+
+
+//Like regular optionl implict unwrapped optionals might contain value or they might be nil however unlike regular optionals we dont need to unwrap them in order to use them .
+
+//var age : Int! = nil //Implicit Unwrapped optional no need to use (if let) in this case
+//age = 12
+//print(age!)
+////other way is
+//var age2 : Int = age
+//print(age2)
+
+func userName(for id : Int) -> String? {
+    if id == 1 {
+        return "John"
+    } else {
+        return nil
+    }
+}
+//if let user = userName(for: 2){
+//    print(user)  /* Ouput  = John */
+//}
+
+//var user = userName(for: 1)
+//print(user) /* Output = Optional(John) */
+
+/* nil coalescing */
+var user = userName(for: 2) ?? "Name Not Found"
+print(user)
+
+
+
+/* Failable initializer :- init with a ? = init? in this object will not be created if valid values are no there */
+
+struct Toddler {
+    var birthName : String
+    var monthsOld : Int
+    
+    init?(birthName: String , monthsOld:Int){
+        if monthsOld < 12 || monthsOld > 36 {
+            return nil
+        } else {
+            self.birthName = birthName
+            self.monthsOld = monthsOld
+        }
+    }
+}
+
+
+/* Optional Chaining */
+
+struct Person {
+    var age: Int
+    var residence : Residence?
+}
+
+struct Residence {
+    var address : Address?
+}
+struct Address {
+    var builingNumber: String?
+    var streetName: String?
+    var apartmentNumber: String?
+}
+let person = Person(age: 30, residence: Residence(address: Address(builingNumber: "123", streetName: "Main Street", apartmentNumber: "101")))
+if let apartmentNumber1 = person.residence?.address?.apartmentNumber {
+    print("Lives in apartment number \(apartmentNumber1)")
+}

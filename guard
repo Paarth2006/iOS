@@ -1,0 +1,79 @@
+import Cocoa
+
+let birthdayIsToday = true
+let invitedGuests = false
+let cakeCandlesLit = true
+
+
+func singHappyBirthday() {
+    guard birthdayIsToday else {
+        print("No one has a birthday today ")
+        return
+    }
+    guard !invitedGuests else{
+        print("It's Just a Family Party")
+        return
+    }
+    guard cakeCandlesLit else{
+        print("The cake's candles haven't been lit ")
+        return
+    }
+    print("Happy Birthday to You")
+}
+singHappyBirthday()
+
+/* Guard with optionals */
+
+func printSquare(of number: Int?){
+    guard let number else {
+        print("Missing Number")
+        return
+    }
+    print("\(number * number)")
+}
+printSquare(of: 4)
+printSquare(of: nil)
+
+// Guard Checks the following things :-
+/*
+ 1) Swift requires you to use return statement if a guard check fails.
+ 2) If the optional you are unwrapping has a value you can use it after the guard code finishes.
+*/
+
+func divide(_ number:Double, by divisor : Double) {
+    if divisor != 0 {
+         let result = number / divisor
+        print(result)
+    }
+}
+func divide2(_ number :Double , by divisor :Double ){
+    guard divisor != 0 else {
+        print("Divisibility by 0 is not possible ")
+        return
+    }
+    let result =  number / divisor
+    print(result)
+}
+divide(4, by: 2)
+divide2(10, by: 0)
+
+struct Goose{
+    var eggs : [String]?
+}
+
+let goose = Goose (eggs: ["egg1", "egg2", "egg3"])
+
+if let eggs = goose.eggs {
+    print(eggs)
+}
+func isEggLay(){
+    guard let eggs = goose.eggs else{
+        print("Invalid Value")
+        return
+    }
+    print("Total Number of Eggs are : \(eggs.count)")
+}
+isEggLay()
+
+
+

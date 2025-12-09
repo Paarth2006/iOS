@@ -1,0 +1,74 @@
+import Cocoa
+import SwiftUI
+
+var greeting = "Hello, playground"
+
+//func add <T : Numeric> (_ a: T, _ b: T)  {
+//    print(a + b)
+//}
+//print(10,20)
+//print(5.5 + 13.2)
+
+//let int = [1,2,4,5]
+
+///* Ways to declare a blank array */
+//
+//let ints :[Int] = []
+
+//let ints2 = [Int]()    //syntax sugar coating
+
+//let ints3 = Array<Int>()
+
+
+/* Generics allows function or types to work with any datatype instead of being limtied to just one .*/
+
+let dict = [1:["a", "b", "c", "d"],
+            2:["d","e","f","g"]]
+
+let dict1 = [Int:[String]]()
+let dict2 = Dictionary<Int , Array<String>>()
+
+print(max(10.5,20)) // Generic method max
+
+/* RangeReplaceablCollection */
+
+func add <T : RangeReplaceableCollection> (_ a: T, _ b: T)  {
+    print(a + b)
+}
+add("ios","DC")
+
+/* associatedtype :- inside a protocol defines a placeholder type that the adopter must decide */
+
+protocol Container {
+    associatedtype Item
+    
+    func add(_ item:Item)
+    
+    func getAll() -> [Item]
+}
+//int type
+class Adopter: Container {
+    var Items : [Int] = []
+    
+    func add(_ item: Int) {
+        print("Adding \(item)")
+    }
+        
+    func getAll() -> [Int] {
+        return Items
+    }
+
+}
+// string type
+class Adopter2: Container {
+    var Items : [String] = []
+    
+    func add(_ item: String) {
+        print("Adding \(item)")
+    }
+    
+    func getAll() -> [String] {
+        return Items
+    }
+    
+}

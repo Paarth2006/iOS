@@ -1,0 +1,91 @@
+import Cocoa
+
+class Animal {
+    let name : String
+    let sound : String
+    
+    init(name: String, sound: String) {
+        // Variable Shadowing
+        self.name = name
+        self.sound = sound
+    }
+    func makeSound() {
+        print("\(name) says \(sound)")
+    }
+    func describe () {
+        print("\(name) is an animal")
+    }
+}
+
+class Cat : Animal {
+    var color : String
+    init(color: String) {
+        self.color = color
+        super.init(name: "Kitty", sound: "Meow")
+    }
+    override func describe() {
+        print("\(name) is a cat with fur of color \(color)")
+    }
+}
+
+class Dog : Animal {
+    var breed : String
+    init(breed: String) {
+        self.breed = breed
+        super.init(name: "Bruno", sound: "Woof")
+    }
+    override func describe() {
+        print("\(name) is a dog of breed \(breed)")
+    }
+}
+
+class Bird : Animal {
+    var feathers : Int
+    init(feathers: Int) {
+        self.feathers = feathers
+        super.init(name: "Twinkle", sound: "Chirp")
+    }
+    override func describe() {
+        print("\(name) is a bird with \(feathers) feathers")
+    }
+}
+
+func getClientDetails(pet : Animal){
+    // is , is a keyword to check
+    if pet is Cat {
+        print("The pet is a cat")
+    }
+    else if pet is Dog {
+        print("The pet is a dog")
+    }
+    else if pet is Bird{
+        print("The pet is a bird")
+    }
+    else{
+        print("The pet is not listed ")
+    }
+    
+    //downCasting (Super to Base class)
+    if let cat = pet as? Cat{
+        print("The pet is downcasted as Cat")
+    }
+    else if let dog = pet as? Dog{
+        print("The pet is downcasted as Dog")
+    }
+    else if let bird = pet as? Bird {
+        print("The pet is downcasted as Bird")
+    }
+}
+
+
+let animal : [Animal] = [Cat(color: "Black"), Dog(breed: "German Shephard") , Bird(feathers: 50)]
+for pet in animal{
+    pet.describe()
+    getClientDetails(pet: pet)
+}
+
+
+let items: [Any] = [5,4,3,2,"Hi",true,0.7]
+
+
+//Ques:- create a base class vehicle with a property brand and a method drive() that prints the brand name,driving this vehicle. create two subclasses one is car one is bike. the car will have an extra property that hold the value of number of doors , bike will have an extra property type . create an array of type vehicle that stores different objects both for car and bike , loop through the array and use is to check the type of the object . Use as? to downcast and print the subclass specific property . *challenge , try using as!(force casting) and observe what will happen if the casting gets failed .

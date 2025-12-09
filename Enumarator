@@ -1,0 +1,20 @@
+import Cocoa
+
+enum CompassPoint {
+    case north ,east ,west , south
+}
+
+var compassHeading =  CompassPoint.west
+
+switch compassHeading {
+case .north:
+    print("I am heading North")
+case .east:
+    print("I am heading East")
+case .west:
+    print("I am heading West")
+case .south:
+    print("I am heading South ")
+}
+
+

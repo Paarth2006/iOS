@@ -1,0 +1,168 @@
+import Cocoa
+import SwiftUI
+
+var greeting = "Hello, playground"
+
+/* closure */
+let greet = {
+    print("Hello! Closure ")
+}
+greet()
+
+/* Syntax of Closure*/
+//{
+//    (parameter-list) -> <return-type> in
+//    statements
+//}
+
+
+//func sayHello(){
+//    print("Hello! Closure")
+//}
+//var x: Int  = 101
+//var hello: () -> Void = sayHello
+//hello()
+
+
+//let greetPerson: (String) -> Void = { name in
+//    print("Hello, \(name)!")
+//}
+//greetPerson("Bob")
+
+let addNUmber: (Int, Int) -> Int = { (a , b) in
+    return a + b
+}
+//let result = addNUmber(1,2)
+//print(result)
+//
+var details: (String , Int) -> Void = { name, age in
+    print("\(name) is \(age) years old ")
+}
+//details("John",20)
+//
+
+/* Lambda Funciton*/
+
+//func mathOperations(x : Int , y : Int , operation : (Int, Int) -> Int) {
+//    print(operation(x,y))
+//}
+//mathOperations(x: 2, y:3, operation: addNUmber)
+//mathOperations(x: 3, y: 4, operation: {(x,y) -> Int in x * y})
+//mathOperations(x: 10, y: 5, operation: {(x,y) -> Int in x / y })
+//mathOperations(x: 12, y: 10, operation: {(x,y)-> Int in x % y })
+//mathOperations(x: 100, y: 10, operation: { $0 / $1 })
+//mathOperations(x: 2, y: 32, operation: {$0 * $1})
+//
+//
+//func myDetails(name : String , age:Int, operation: (String,Int) -> Void){
+//    print(operation(name,age))
+//}
+//myDetails(name: "Paarth", age: 19, operation: details)
+//
+
+
+/* Trailing Closure */
+
+//func performOperation(a: Int , b: Int , operation : (Int , Int) -> Int) {
+//    let result = operation(a,b)
+//    print(result)
+//}
+//performOperation(a: 1, b: 2) {x,y in
+//    return x * y
+//}
+//performOperation(a: 1, b: 2) {$0 + $1}
+
+
+/* capture values*/
+
+//func makeId() -> () -> Int {
+//    var count  = 0
+//    let counter = {
+//        count+=1
+//        return count;
+//    }
+//    return counter
+//}
+//let counter1 = makeId()
+//print(counter1())
+//print(counter1())
+//print(counter1())
+//print(counter1())
+//
+
+//func greetingMessage(_ message : () -> String ) {
+//    print("Hello !", message())
+//}
+//greetingMessage {"Learning Closure"}
+
+/* auto closure*/
+
+func greetingMessage(_ message : @autoclosure() -> String ) {
+    print("Hello !", message())
+}
+greetingMessage ("Learning closure ")
+
+
+//var array: [String] = ["Munich","Berlin","Copenhagen","London","Delhi","Mumbai"]
+//
+//for i in 0..<array.count {
+//    for j in 0..<array.count-1 {
+//        if array[j] > array[j+1] {
+//            let temp = array[j]
+//            array[j] = array[j+1]
+//            array[j+1] = temp
+//        }
+//    }
+//}
+//print(array)
+
+
+struct Student {
+    var age: Int
+    var name: String
+    init(age: Int, name: String) {
+        self.age = age
+        self.name = name
+    }
+}
+let student1 = Student(age: 19, name: "Paarth")
+let student2 = Student(age: 20, name: "John")
+let student3 = Student(age: 23, name: "Bob")
+let student4 = Student(age: 22, name: "Erling")
+let student5 = Student(age: 22, name: "Julian")
+
+var studentArray = [student1,student2,student3,student4,student5]
+
+//for i in 0..<studentArray.count {
+//    for j in 0..<studentArray.count-1 {
+//        if studentArray[j].age < studentArray[j+1].age {
+//            let temp = studentArray[j]
+//            studentArray[j] = studentArray[j+1]
+//            studentArray[j+1] = temp
+//        }
+//    }
+//}
+
+
+/* without trailing closure syntax */
+
+//var sortedStudentArray = studentArray.sorted(by: {
+//    s1, s2 in s1.age < s2.age
+//})
+
+/* with trailing closure syntax*/
+
+//var sortedStudentArray = studentArray.sorted {
+//    s1,s2 in s1.age > s2.age
+//}
+
+/* with trailing closure syntax and sugar syntax */
+
+//var sortedStudentArray = studentArray.sorted{ $0.age < $1.age }
+//print(sortedStudentArray)
+
+
+let array: [String] = ["Munich","Berlin","Copenhagen","London","Delhi","Mumbai"]
+let sortedArray = array.sorted{ $0 < $1 }
+print(sortedArray)
+

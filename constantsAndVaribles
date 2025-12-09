@@ -1,0 +1,59 @@
+import Cocoa
+
+var age = 50
+
+@MainActor func printAge() {
+    print("My age is \(age)")
+}
+print(age)
+printAge()
+
+
+func printAge2()  {
+    var age2 = 20
+    print("My age is \(age2)")
+}
+printAge2()
+
+/* Variable Shadowing */
+
+func printVariable() {
+    let points = 100
+    print(points)
+    for index in 1...3 {
+        let points = 50
+        print("loop \(index) : \(points + index)")
+    }
+    print(points)
+}
+printVariable()
+
+
+var name: String? = "John"
+if let name = name {
+    print("Func was Passed: \(name)")
+}
+
+func printName(name : String?) {
+    guard let name = name else {
+        print(" Value was not Passed")
+        return
+    }
+    print("Value was Passed: \(name)")
+}
+printName(name: "Julian")
+
+
+
+/* Shadowing Initializer */
+
+struct User {
+    var name : String
+    var age :Int
+    
+    init(name: String , age: Int) {
+        self.name = name
+        self.age = age
+    }
+    
+}

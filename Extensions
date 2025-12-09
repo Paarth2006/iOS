@@ -1,0 +1,84 @@
+import Cocoa
+import SwiftUI
+
+var greeting = "Hello, playground"
+
+/* EXTENSIONS */
+/* Addiing new functionality to existing types , helps to automatically complete the code  */
+
+//extension SomeType {
+//    // new functionality to add someType goes here
+//}
+
+
+extension Int {
+    func isEven() -> Bool {
+        return self % 2 == 0
+    }
+}
+var x = 10
+print(x.isEven())
+print(3.isEven())
+
+
+extension String {
+    func trimed() -> String {
+        return self.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+}
+var name = "    Graphic   Era  University"
+name.trimed()
+
+
+
+func trim(_ str : String) -> String {
+    return str.trimmingCharacters(in: .whitespacesAndNewlines)
+}
+trim("    hel ll oo")
+
+
+
+extension Int {
+    var square: Int {
+        self * self
+    }
+}
+var x1 = 3
+print(x1.square)
+print(5.square)
+
+
+
+extension Double {
+    func tokm() -> Double {
+        self * 1000
+    }
+}
+var x2 = 10.0
+print(x2.tokm())
+
+
+
+extension String {
+    var line:[String] {
+        return self.components(separatedBy: .newlines)
+    }
+}
+var myValue = """
+hello
+world
+"""
+myValue.line.count
+print(myValue.line)
+
+struct Person {
+    var name : String
+    var age : Int
+    init(name: String, age: Int) {
+        self.name = name
+        self.age = age
+    }
+}
+let user1 = Person(name: "A", age: 20)
+print(user1)
+
